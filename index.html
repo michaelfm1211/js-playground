@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>JS Playground</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="codemirror.css" rel="stylesheet" />
+  <link href="editor-js.css" rel="stylesheet" />
+  <script src="library.js"></script>
+</head>
+<body>
+  <section id="static">
+    <pre><code id="static-js" data-height=""></code></pre>
+  </section>
+
+  <section id="live" class="live hidden">
+    <header class="output-header full-border">
+      <h4 class="output-heading">JS Playground</h4>
+    </header>
+    <div id="editor" class="editor"></div>
+
+    <div class="output-container">
+      <div class="buttons-container">
+        <button id="execute" class="button run" type="button">Run &rsaquo;</button>
+        <button id="stack" type="button" class="button">Copy Stack Snippet</button>
+      </div>
+      <div id="console" class="output"><code></code></div>
+    </div>
+  </section>
+  <script src="extras.js"></script>
+  <script src="codemirror.js"></script>
+  <script src="editor-js.js"></script>
+</body>
+
+</html>
