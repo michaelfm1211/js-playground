@@ -1,5 +1,7 @@
-const hash = decodeURIComponent(new URL(location.href).hash.substring(1));
-document.getElementById('static-js').textContent = hash;
+const hash = new URL(location.href).hash.substring(1);
+// if code is empty, then hash will be %E2%80%8B
+document.getElementById('static-js').textContent =
+  hash !== '%E2%80%8B' ? decodeURIComponent(hash) : '';
 
 window.addEventListener('keyup', () => {
   const code = [...document.getElementsByClassName('CodeMirror-line')]
