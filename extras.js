@@ -1,13 +1,13 @@
 const hash = new URL(location.href).hash.substring(1);
-// if code is empty, then hash will be %E2%80%8B
-document.getElementById('static-js').textContent =
-  hash !== '%E2%80%8B' ? decodeURIComponent(hash) : '';
+
+document.getElementById('static-js').textContent = decodeURIComponent(hash);
 
 window.addEventListener('keyup', () => {
   const code = [...document.getElementsByClassName('CodeMirror-line')]
     .map(el => el.textContent).join('\n');
   const state = new URL(location.href);
-  state.hash = encodeURIComponent(code);
+  // empty lines contain %E2%80%8B for some reason
+  state.hash = encodeURIComponent(code).replaceAll('%E2%80%8B', '');
   location.href = state;
 });
 
